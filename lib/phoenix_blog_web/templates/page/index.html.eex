@@ -1,0 +1,55 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+  <p>Peace of mind from prototype to production</p>
+</section>
+
+<section class="row">
+  <article class="column">
+    <h2>Resources</h2>
+    <ul>
+      <li>
+        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
+      </li>
+    </ul>
+  </article>
+  <article class="column">
+    <h2>Help</h2>
+    <ul>
+      <li>
+        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
+      </li>
+      <li>
+        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
+      </li>
+      <li>
+        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
+      </li>
+    </ul>
+  </article>
+</section>
+
+<div class="row">
+  <div class="col-md-12 alert alert-info">
+    Hello, <span id="user_id"><%= @conn.params["user_id"] %></span>!
+  </div>
+  <div class="col-md-8">
+    <h2>Messages</h2>
+    <input type="text" id="new_message" placeholder="Type and press enter..." class="form-control">
+    <ul id="message_list" class="list-unstyled"></ul>
+  </div>
+  <div  class="col-md-4">
+    <h2>Who’s Online</h2>
+    <ul id="user_list" class="list-unstyled">
+      <li>Loading online users...</li>
+    </ul>
+  </div>
+</div>

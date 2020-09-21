@@ -21,6 +21,10 @@ defmodule PhoenixBlog.Blog do
     Repo.all(Post)
   end
 
+  def list_posts_desc do
+    Post |> order_by(desc: :inserted_at) |> Repo.all()
+  end
+
   @doc """
   Gets a single post.
 

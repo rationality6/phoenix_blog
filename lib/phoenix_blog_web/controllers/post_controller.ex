@@ -15,6 +15,13 @@ defmodule PhoenixBlogWeb.PostController do
   end
 
   def create(conn, %{"post" => post_params}) do
+
+    if upload = post_params["photo"] do
+      extension = Path.extname(upload.filename)
+      # File.cp(upload.path, "/media/#{user.id}-profile#{extension}")
+      File.cp(upload.path, "/media/#{extension}")
+    end
+
     case Blog.create_post(post_params) do
       {:ok, post} ->
         conn

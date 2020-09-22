@@ -6,6 +6,7 @@ defmodule PhoenixBlog.Blog.Post do
     field :author, :string
     field :body, :string
     field :title, :string
+    field :photo, :string
 
     timestamps()
   end
@@ -13,7 +14,7 @@ defmodule PhoenixBlog.Blog.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:title, :body, :author])
+    |> cast(attrs, [:title, :body, :author, :photo])
     |> validate_required([:title, :body, :author])
   end
 end

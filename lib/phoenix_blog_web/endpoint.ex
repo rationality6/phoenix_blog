@@ -51,4 +51,6 @@ defmodule PhoenixBlogWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug PhoenixBlogWeb.Router
+
+  plug Plug.Static, at: "/uploads", from: "/media"
 end
